@@ -6,9 +6,9 @@ interface props {
 
 export default function RecipePreview(props: props) {
   return (
-    <div className="card dark:bg-stone-200 my-2 lg:w-1/4 flex md:w-full mx-2">
+    <div className="card dark:bg-stone-200 lg:w-1/4 flex h-fit md:w-full">
       <a href={"recipes/recipe/" + props.id} className="w-full">
-        <h3>{props.title}</h3>
+        <h3 className="text-md font-bold">{props.title}</h3>
         <div className="tags flex flex-wrap justify-around h-fit align-bottom w-full">
           {props.tags?.map((tag) => {
             return (

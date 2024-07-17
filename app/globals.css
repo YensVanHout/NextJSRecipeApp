@@ -46,7 +46,7 @@
     @apply bg-white
       shadow-sm
       rounded-md
-      py-3 px-4 my-4
+      py-3 px-4
       relative
       overflow-hidden;
   }

@@ -4,6 +4,7 @@ import { recipe } from "@/interfaces/interfaces";
 import { getRecipes } from "@/helpers/helpers";
 import RecipePreview from "@/components/RecipePreview/RecipePreview";
 import { useEffect, useState } from "react";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 export default function Home() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -22,16 +23,18 @@ export default function Home() {
         Latest recipes:
       </h2>
       <div className="md:flex flex-wrap justify-around">
-        {recipes.map((recipe) => {
-          return (
-            <RecipePreview
-              key={"recipe-" + recipe.id}
-              id={recipe.id}
-              title={recipe.title}
-              tags={recipe.tags}
-            />
-          );
-        })}
+        <Masonry columnsCount={3} gutter={"5px"}>
+          {recipes.map((recipe) => {
+            return (
+              <RecipePreview
+                key={"recipe-" + recipe.id}
+                id={recipe.id}
+                title={recipe.title}
+                tags={recipe.tags}
+              />
+            );
+          })}
+        </Masonry>
       </div>
     </main>
   );
