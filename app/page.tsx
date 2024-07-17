@@ -18,7 +18,9 @@ export default function Home() {
 
   return (
     <main>
-      <h2 className="font-bold text-4xl">Latest recipes:</h2>
+      <h2 className="font-bold text-4xl dark:text-complementary">
+        Latest recipes:
+      </h2>
       <div className="md:flex flex-wrap justify-around">
         {recipes.map((recipe) => {
           return (

@@ -38,10 +38,12 @@ function Recipe({
   loggedIn: boolean;
 }) {
   return (
-    <>
+    <div className="dark:text-stone-100">
       {/* TITLE */}
       <div id="title" className="md:flex w-fit mx-auto">
-        <h2 className="text-3xl mr-4 h-full text-center">{recipe.title}</h2>
+        <h2 className="text-3xl font-bold mr-4 h-full text-center dark:text-complementary">
+          {recipe.title}
+        </h2>
         {loggedIn && recipe.id ? <User id={recipe.id} /> : null}
       </div>
 
@@ -67,7 +69,9 @@ function Recipe({
         {/* INGREDIENTS */}
         {recipe.ingredients.length > 0 ? (
           <div id="ingredients" className="mt-6 w-1/6 md:text-xl">
-            <h2 className="text-2xl">Ingredients</h2>
+            <h2 className="text-2xl font-bold dark:text-complementary">
+              Ingredients
+            </h2>
             <ul className="list-disc">
               {recipe.ingredients.map((ingredient: string) => (
                 <li key={"ingredient-" + ingredient} className="pb-4">
@@ -81,7 +85,9 @@ function Recipe({
         {/* TOOLS */}
         {recipe.tools && recipe.tools.length > 0 ? (
           <div id="tools" className="mt-6 w-1/6 md:text-xl">
-            <h2 className="text-2xl">Tools</h2>
+            <h2 className="text-2xl font-bold dark:text-complementary">
+              Tools
+            </h2>
             <ul className="list-disc">
               {recipe.tools.map((tool: string) => (
                 <li key={"tool-" + tool} className="pb-4">
@@ -95,7 +101,9 @@ function Recipe({
         {/* STEPS */}
         {recipe.steps && recipe.steps.length > 0 ? (
           <div id="steps" className="mt-6 w-1/6 md:text-xl">
-            <h2 className="text-2xl">Steps</h2>
+            <h2 className="text-2xl font-bold dark:text-complementary">
+              Steps
+            </h2>
             <ul className="list-disc">
               {recipe.steps.map((step: string, index: number) => (
                 <li key={"step-" + (index + 1)} className="pb-4">
@@ -106,7 +114,7 @@ function Recipe({
           </div>
         ) : null}
       </div>
-    </>
+    </div>
   );
 }
 

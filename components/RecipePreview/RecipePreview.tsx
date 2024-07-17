@@ -12,7 +12,7 @@ export default function RecipePreview(props: props) {
         <div className="tags flex flex-wrap justify-around h-fit align-bottom w-full">
           {props.tags?.map((tag) => {
             return (
-              <span className="pill" key={"tag-" + tag}>
+              <span className="pill dark:bg-complementary" key={"tag-" + tag}>
                 {tag}
               </span>
             );

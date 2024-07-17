@@ -19,7 +19,9 @@ export default function Page() {
 
   return (
     <div className="h-full">
-      <h2 className="text-3xl font-bold text-center my-4">Log In</h2>
+      <h2 className="text-3xl font-bold text-center dark:text-complementary my-4">
+        Log In
+      </h2>
       <form autoComplete="off" className="w-fit md:w-1/2 mx-auto">
         <fieldset className="text-center mb-3">
           <label htmlFor="email" className="block text-2xl dark:text-slate-200">
