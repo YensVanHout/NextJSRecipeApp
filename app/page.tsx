@@ -22,19 +22,23 @@ export default function Home() {
       <h2 className="font-bold text-4xl dark:text-complementary">
         Latest recipes:
       </h2>
-      <div className="md:flex flex-wrap justify-around">
-        <Masonry columnsCount={3} gutter={"5px"}>
-          {recipes.map((recipe) => {
-            return (
-              <RecipePreview
-                key={"recipe-" + recipe.id}
-                id={recipe.id}
-                title={recipe.title}
-                tags={recipe.tags}
-              />
-            );
-          })}
-        </Masonry>
+      <div>
+        <ResponsiveMasonry
+          columnsCountBreakPoints={{ 640: 1, 768: 2, 1024: 3, 1280: 4 }}
+        >
+          <Masonry>
+            {recipes.map((recipe) => {
+              return (
+                <RecipePreview
+                  key={"recipe-" + recipe.id}
+                  id={recipe.id}
+                  title={recipe.title}
+                  tags={recipe.tags}
+                />
+              );
+            })}
+          </Masonry>
+        </ResponsiveMasonry>
       </div>
     </main>
   );
